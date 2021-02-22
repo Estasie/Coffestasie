@@ -1,0 +1,285 @@
+@font-face{
+    font-family: "Roboto";
+    src: url("./fonts/RobotoCondensed-Light.ttf") format("ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face{
+    font-family: "Roboto";
+    src: url("./fonts/RobotoCondensed-Regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face{
+    font-family: "Roboto";
+    src: url("./fonts/RobotoCondensed-Bold.ttf") format("ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+  margin: 0;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  user-select: none;
+}
+.container {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container__block {
+  position: relative;
+  display: flex;
+
+  flex: 1;
+  gap: 0;
+  background-color: black;
+  color: #fff;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: right;
+  z-index: 0;
+}
+.video2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+.block__descr_container {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+}
+
+.block__descr_container:hover {
+  transition: background 0.5s ease-in-out;
+  background: none;
+}
+
+.block_descr {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+.block_descr:hover {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+
+
+
+.block_img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+
+.block__header {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0 2em;
+}
+
+.block__text{
+    font-size: 16px;
+    font-weight: 100;
+    padding: 1em 5em 0.5em 5em;
+}
+
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    
+}
+
+.social_icon{
+    width: 30px;
+    height: 30px;
+    
+}
+
+
+
+.hidden{
+    display: none;
+}
+
+/* FORM */
+.form{
+  max-width: 400px;
+  margin:  auto;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.form__header{
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.form__subheader{
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.form__label{
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+
+}
+.form__item{
+  margin: 0px 0px 20px 0px;
+}
+.form__input{
+  height: 2em;
+  padding: 0px 20px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+.checkbox__input{
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after{
+  transform: scale(1);
+}
+
+.checkbox__label{
+  font-size: 16px;
+  line-height: 140%;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+ 
+}
+
+.checkbox__label::before{
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.checkbox__label::after{
+  transition: transform 0.5s ease 0s;
+  content: "";
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  left: 4px;
+  border-radius: 4px;
+  position: absolute;
+  background-color:#D9A689;
+  transform: scale(0);
+}
+
+.checkbox__label a{
+  color: #D9A689;
+}
+
+/* FORM BUTTON */
+
+.form__button_container{
+  position: relative;
+}
+.form__button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  cursor:pointer;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  height: 3em;
+  background-color: #D9A689;
+  color: #fff;
+  
+  margin-top: 50px;
+}
+
+.form__button:hover{
+  transition: background-color .3s ease-in-out;
+}
+
+.form__button:focus{
+  
+  outline: none;
+  
+  
+}
+
+.fb_1 img{
+  width: 100%;
+  position: absolute;
+  height: 100px;
+  
+}
+
+@media (max-width: 980px) {
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 980px) {
+  .block_img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 670px) {
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    font-size: 12px;
+  }
+
+  .block_img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+  }
+}

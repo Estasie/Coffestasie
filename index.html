@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cafe</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__block">
+            <video class="video2" id="videoPlay" muted loop>
+                <source src="./videos/video2.mp4">
+                </source>
+            </video>
+            <div class="block__descr_container">
+                <div class="block_descr">
+                    <img src="./imgs/croissant.svg" alt="menu" class="block_img">
+                    <p class="block__header">Наше меню</p>
+                    <p class="block__text">Удивляем не только напитками, но и блюдами</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="container__block" id="emploers">
+
+            <video class="video2" id="videoPlay" muted loop>
+                <source src="./videos/video3.mp4">
+                </source>
+            </video>
+            <div class="block__descr_container">
+                <div class="block_descr">
+                    <img src="./imgs/barista.svg" alt="cup" class="block_img">
+                    <p class="block__header">Хочешь стать частью нашей команды?</p>
+                    <p class="block__text">Заполни форму, и мы с нетерпением будем ждать тебя на собеседовании</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="container__block hidden" id="emploersForm">
+            <div class="form">
+                <form action="#" class="form__body" id="form">
+                    <p class="form__header">Как нам с вами связаться?</p>
+                    <p class="form__subheader">Здесь Вы не увидите графы "О себе". Мы будем рады услышать о Вас лично :)</p>
+                    <div class="form__item">
+                        <label for="formName" class="form__label">Имя*:</label>
+                        <input type="text" name="name" class="form__input" id="formName">
+                    </div>
+                    <div class="form__item">
+                        <label for="formEmail" class="form__label">E-mail*:</label>
+                        <input type="text" name="email" class="form__input" id="formEmail">
+                    </div>
+                    <div class="form__item">
+                        <label for="formTel" class="form__label">Телефон*:</label>
+                        <input type="tel" name="tel" class="form__input" id="formTel">
+                    </div>
+
+                    <div class="form__item">
+                        <div class="checkbox">
+                            <input type="checkbox" checked name="agreement" class="checkbox__input" id="formAgreement">
+                            <label for="formAgreement" class="checkbox__label"><span>
+                                    Я даю своё согласие на обработку персональных данных в соответствии с <a
+                                        href="#">Условиями</a>*.
+                                </span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form__button_container">
+                        <button class="form__button" type="submit">Отправить</button>
+                        <span class="fb_1"><img src="./imgs/code_cup.svg" alt=""></span>
+                        <span class="fb_2"></span>
+
+                    </div>
+                    
+
+
+
+                </form>
+
+            </div>
+
+
+        </div>
+        <div class="container__block">
+            <video class="video" id="videoPlay" muted loop>
+                <source src="./videos/video1.mp4">
+                </source>
+            </video>
+            <div class="block__descr_container">
+                <div class="block_descr">
+                    <img src="./imgs/cup.png" alt="cup" class="block_img">
+                    <p class="block__header">Как нас найти</p>
+                    <p class="block__text">Мы находимся по адресу ул.Пушкинская 101 на первом этаже</p>
+                    <p class="block__text">А вот ссылки на социальные сети:</p>
+                    <div class="social">
+                        <div class="inst">
+                            <a href=""><img class="social_icon" src="./imgs/instagram.svg" alt="inst"></a>
+                        </div>
+                        <div class="vk">
+                            <a href=""><img class="social_icon" src="./imgs/vk.svg" alt="vk"></a>
+                        </div>
+                        <div class="fb">
+                            <a href=""><img class="social_icon" src="./imgs/facebook.svg" alt="facebook"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+
+
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
