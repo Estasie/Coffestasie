@@ -1,0 +1,106 @@
+
+@font-face{
+    font-family: "Roboto";
+    src: url("./fonts/RobotoCondensed-Light.ttf") format("ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face{
+    font-family: "Roboto";
+    src: url("./fonts/RobotoCondensed-Regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face{
+    font-family: "Roboto";
+    src: url("./fonts/RobotoCondensed-Bold.ttf") format("ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Caveat';
+    src: url("./fonts/Caveat-Regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    left: 0;
+    top: 0;
+    box-sizing:border-box;
+    /* font-family: 'Roboto', sans-serif; */
+    user-select: none;
+}
+
+.menu__container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+}
+
+.menu__descr{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__drink {
+    display: flex;
+    color: #fff;
+    position: relative;
+}
+
+.menu__header{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 140%;
+
+}
+
+
+.arrow{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 100px;
+    left: 50px;
+}
+
+.arrow2{
+    position:absolute;
+    transform: rotate(90deg);
+    width: 150px;
+    height: 150px;
+    left: 500px;
+}
+
+.menu__subheader{
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+
+.syrninki{
+    padding: 150px 0 0 150px;
+}
+
+.a2{
+    left: 550px;
+    transform: rotate(30deg);
+}
+
+.dish__desription{
+    font-family: 'Caveat', sans-serif;
+    position: absolute;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.d1{
+    left: 180px;
+    top: 90px;
+}
+
+
+
