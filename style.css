@@ -227,10 +227,14 @@
   font-size: 16px;
   border: none;
   height: 3em;
-  background: linear-gradient(#e66465, #9198e5);;
+  /* background: linear-gradient(#e66465, #9198e5); */
   color: #fff;
+  /* background-image: url(./imgs/cookie_button.svg); */
+  background-repeat: no-repeat;
   
+  transition: width .5s ease 0s;
   margin-top: 50px;
+
 }
 
 
@@ -238,15 +242,16 @@
   transition: background-color .3s ease-in-out;
 }
 
-.form__button:focus{
-  /* transition: width .5s ease-in-out 0s ; */
-  outline: none;
+
+
+._active{
   transition: width  .5s ease 0s;
-  
-  
+          
   width: 48px;
-  
+ 
+
 }
+
 
 .fb_1 img{
   
@@ -256,15 +261,19 @@
   top: -30px;
   
 }
-
-.chocolate{
-  width: 5px;
-  height: 5px;
-  background-color: red;
-  border-radius: 5px;
-  left: 3px;
-  top: 1px;
+.cookie{
   position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 300px;
+}
+.active__cookie{
+  left: 0px;
+  transition: left 1s ease 0s;
+}
+.cookie__button{
+  position: absolute;
+
 }
 
 @media (max-width: 980px) {
