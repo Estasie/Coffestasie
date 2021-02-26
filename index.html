@@ -12,13 +12,13 @@
 <body>
     <div class="container">
          
-        <div class="container__block">
-            <video class="video2" id="videoPlay" muted loop>
+        <div class="container__block" id="menu__enter">
+            <video class="video2 videoPlay" id="v1" muted loop>
                 <source src="./videos/video2.mp4">
                 </source>
             </video>
             <div class="block__descr_container">
-                <div class="block_descr">
+                <div class="block_descr v1">
                     <img src="./imgs/croissant.svg" alt="menu" class="block_img">
                     <a href="./menu.html"><p class="block__header">Наше меню</p></a>
                     <p class="block__text">Удивляем не только напитками, но и блюдами</p>
@@ -28,12 +28,12 @@
         </div>
         <div class="container__block" id="emploers">
 
-            <video class="video2" id="videoPlay" muted loop>
+            <video class="video2 videoPlay" id="v2" muted loop>
                 <source src="./videos/video3.mp4">
                 </source>
             </video>
             <div class="block__descr_container">
-                <div class="block_descr">
+                <div class="block_descr v2">
                     <img src="./imgs/barista.svg" alt="cup" class="block_img">
                     <p class="block__header">Хочешь стать частью нашей команды?</p>
                     <p class="block__text">Заполни форму, и мы с нетерпением будем ждать тебя на собеседовании</p>
@@ -52,20 +52,20 @@
                     <p class="form__subheader">Здесь Вы не увидите графы "О себе". Мы будем рады услышать о Вас лично :)</p>
                     <div class="form__item">
                         <label for="formName" class="form__label">Имя*:</label>
-                        <input type="text" name="name" class="form__input" id="formName">
+                        <input type="text" name="name" class="form__input _req" id="formName" autocomplete="off">
                     </div>
                     <div class="form__item">
-                        <label for="formEmail" class="form__label">E-mail*:</label>
-                        <input type="text" name="email" class="form__input" id="formEmail">
+                        <label for="formEmail" class="form__label ">E-mail*:</label>
+                        <input type="text" name="email" class="form__input _req _email " id="formEmail" autocomplete="off">
                     </div>
                     <div class="form__item">
                         <label for="formTel" class="form__label">Телефон*:</label>
-                        <input type="tel" name="tel" class="form__input" id="formTel">
+                        <input type="tel" name="tel" class="form__input _req" id="formTel" autocomplete="off">
                     </div>
 
                     <div class="form__item">
                         <div class="checkbox">
-                            <input type="checkbox" checked name="agreement" class="checkbox__input" id="formAgreement">
+                            <input type="checkbox" checked name="agreement" class="checkbox__input _req" id="formAgreement">
                             <label for="formAgreement" class="checkbox__label"><span>
                                     Я даю своё согласие на обработку персональных данных в соответствии с <a
                                         href="#">Условиями</a>*.
@@ -75,7 +75,7 @@
                 
                     </div>
                     <div class="form__button_container">
-                        <button class="form__button" type="button" id="cookieButton"><span>Отправить</span></button>
+                        <button class="form__button" type="submit" id="cookieButton"><span>Отправить</span></button>
                         
                         <span class="fb_1"><img src="./imgs/code_cup.svg" alt=""></span>
                         <span class="fb_2"><img src="./imgs/cookie_button.svg" alt="cookie" class="cookie"></span>
@@ -92,12 +92,12 @@
 
         </div>
         <div class="container__block">
-            <video class="video" id="videoPlay" muted loop>
+            <video class="video videoPlay" id="v3" muted loop>
                 <source src="./videos/video1.mp4">
                 </source>
             </video>
             <div class="block__descr_container">
-                <div class="block_descr">
+                <div class="block_descr v3">
                     <img src="./imgs/map.svg" alt="cup" class="block_img">
                     <p class="block__header">Как нас найти</p>
                     <p class="block__text">Мы находимся по адресу ул.Пушкинская 101 на первом этаже</p>

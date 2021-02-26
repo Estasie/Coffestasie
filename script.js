@@ -1,79 +1,180 @@
 window.addEventListener("DOMContentLoaded", () => {
-  let blockInfo = document.querySelectorAll(".container__block");
-  let form = document.querySelector("#emploersForm");
-  let emploersBlock = document.querySelector("#emploers");
-  let cookieButton = document.querySelector(".form__button");
-  let backButton = document.querySelector('.form__back');
+  let blockInfo = document.querySelectorAll(".container__block"),
+      formContainer = document.querySelector("#emploersForm"),
+      emploersBlock = document.querySelector("#emploers"),
+      cookieButton = document.querySelector(".form__button"),
+      backButton = document.querySelector('.form__back'),
+      form = document.getElementById('form'),
+      elemValid = document.querySelector('.form__item'),
+      backgroundVideos = document.querySelectorAll('#videoPlay');
 
-  function videoPausePlay() {
-    for (let elem of blockInfo) {
-      let video = document.querySelectorAll("#videoPlay");
-      video.forEach((el) => {
-        elem.addEventListener("mouseover", () => {
-          el.play();
-        });
-        elem.addEventListener("mouseout", () => {
-          el.pause();
-        });
-      });
+
+      
+
+      console.log(elemValid);
+
+
+  form.addEventListener('submit', formSend);
+
+  async function formSend(e){
+    e.preventDefault(); 
+
+    // let formedData = new formedData(form);
+     
+
+    let error = formValidate(form);
+
+    if(error === 0){
+      moveCookie();
+      // let resp = await fetch('', {
+      //   method: 'POST', 
+      //   body: formedData
+      // });
+
+      // if(resp.ok){
+      //   let res = await resp.json();
+      //   alert(res.messsage);
+      //   form.reset(); 
+      // }
+    } else {
+      alert('Error');
     }
   }
+
+  function videoPausePlay(){
+    blockInfo.forEach(el => {
+      el.addEventListener('mouseover', function() {
+        if(this.classList.contains('flex')){
+          return;
+        }else {
+          this.querySelector('video').play();
+        } 
+      });
+      el.addEventListener('mouseleave', function() {
+        if(this.classList.contains('flex')){
+          return;
+        }else {
+          this.querySelector('video').pause();
+        }
+      });
+    })
+  }
+
+  
+
+
 
   function openForm() {
     emploersBlock.addEventListener("click", () => {
       emploersBlock.classList.add("hidden");
-      form.classList.remove("hidden");
-      form.classList.add("flex");
+      formContainer.classList.remove("hidden");
+      formContainer.classList.add("flex");
     });
   }
 
   function closeForm(){
     backButton.addEventListener('click', () => {
       emploersBlock.classList.remove("hidden");
-      form.classList.add("hidden");
-      form.classList.remove("flex");
+      formContainer.classList.add("hidden");
+      formContainer.classList.remove("flex");
     });
   }
 
-  // function openInNewTab(url) { let win = ***(url, '_blank'); win.focus(); } 
+
+  function formValidate () {
+    let error = 0;
+    let formReq = document.querySelectorAll('._req');
+
+
+    for (let i=0; i< formReq.length; i++){
+      const input = formReq[i];
+      formRemoveError(input);
+
+      if(input.classList.contains('_email')){
+        if(!emailTest(input)){
+          formAddError(input);
+         
+          error++;
+        }
+      } else if(input.getAttribute("type") === "checkbox" && input.checked === false){
+        formAddError(input);
+        error++;
+      } else {
+        if(input.value === ''){
+          formAddError(input);
+          error++;
+        }
+      }
+
+    }
+    return error;
+  }
+
+  function formAddError(input){
+    input.parentElement.classList.add('_error');
+    input.classList.add('_error');
+    input.parentElement.classList.remove('_valid');
+    input.classList.remove('_valid');
+  }
+
+  function formRemoveError(input){
+    input.parentElement.classList.remove('_error');
+    input.classList.remove('_error');
+    input.parentElement.classList.add('_valid');
+    input.classList.add('_valid');
+  }
+
+
+
+  // Тест email-a
+
+  function emailTest(input){
+    return (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(form.email.value));
+   
+  }
+
+  // function openNewTab(){
+  //   document.getElementById("menu__enter").onclick = function()
+  // {
+  // document.location.href = "http://127.0.0.1:5500/menu.html";
+  // } 
+  // }
+  
   function moveCookie() {
-    cookieButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      let checkButtonClasses = e.target.classList.contains("_active");
+    cookieButton.addEventListener("click", () => {
+      let checkButtonClasses = cookieButton.classList.contains("_active");
       let cookie = document.querySelector(".cookie");
-      let promiseForCookie = new Promise(() => {
         if(!checkButtonClasses){
           
           setTimeout(function () {
-            e.target.classList.add("_active");
-            e.target.innerHTML = "";
+            cookieButton.classList.add("_active");
+            this.innerHTML = "";
             cookie.classList.add("active__cookie");
           }, 501);
           setTimeout(function () {
-            cookie.style.left = 300 + 'px';
-            cookie.style.top = -Math.pow(5,2) + 'px';
+            cookie.style.left = 280 + 'px';
+            cookie.style.top = -Math.pow(7,2) + 'px';
           }, 1500);
           
         } else {
           setTimeout(function () {
-            e.target.classList.remove("_active");
-            e.target.innerHTML = "Отправить";
+            cookieButton.classList.remove("_active");
+            this.innerHTML = "Отправить";
           }, 505);
           
         }
         
-      });
       
-      console.log(promiseForCookie);
-      promiseForCookie.then(()=>{
-
-      });
+      
       
     });
   }
 
+
+
+
   videoPausePlay();
   openForm();
   closeForm();
-  moveCookie();
+  // moveCookie();
 });
