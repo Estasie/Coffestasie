@@ -1,5 +1,6 @@
-moveCookie = function(button) {
-    button.addEventListener("click", (e) => {
+export default function moveCookie() {
+  let cookieButton =  document.querySelector(".form__button");
+    cookieButton.addEventListener("click", (e) => {
       let checkButtonClasses = e.target.classList.contains("_active");
       let cookie = document.querySelector(".cookie");
       let promiseForCookie = new Promise(() => {
@@ -32,5 +33,3 @@ moveCookie = function(button) {
       
     });
   }
-
-  module.exports = moveCookie;

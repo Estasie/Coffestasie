@@ -1,5 +1,5 @@
 
-  export function videoPausePlay(){
+  export default function videoPausePlay(){
     let blocks = document.querySelectorAll('.container__block');
     console.log(blocks);
     blocks.forEach(el => {
