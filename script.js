@@ -1,16 +1,18 @@
 import videoPausePlay  from './modules/videoLaunch.js';
 import {closeForm, openForm} from './modules/closeOpenForm.js';
-import formSend from './modules/formSend.js';
-import moveCookie from './modules/buttonModule.js';
+
+
+import form from './modules/postData.js';
 
 window.addEventListener("DOMContentLoaded", () => {
-  let form = document.getElementById('form');
   
-  form.addEventListener('submit', formSend);
+  // form.addEventListener('submit', postData);
+
+
 
 
   videoPausePlay();
   openForm();
+  form();
   closeForm();
-  moveCookie();
 });
