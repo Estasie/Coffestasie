@@ -1,4 +1,3 @@
-
 @font-face{
     font-family: "Roboto";
     src: url("./fonts/RobotoCondensed-Light.ttf") format("ttf");
@@ -18,11 +17,18 @@
     font-style: normal;
 }
 
+
 @font-face{
-    font-family: 'Caveat';
-    src: url("./fonts/Caveat-Regular.ttf") format("ttf");
+    font-family: 'Roboto';
+    src: url("./fonts/RobotoCondensed-Italic.ttf") format("ttf");
     font-weight: 400;
-    font-style: normal;
+    font-style: italic;
+}
+@font-face{
+    font-family: 'Ubuntu';
+    src: url("./fonts/Ubuntu-Italic.ttf") format("ttf");
+    font-weight: 400;
+    font-style: italic;
 }
 
 *{
@@ -38,69 +44,80 @@
     height: 100vh;
     width: 100vw;
     background-color: #000;
+    display: flex;
 }
 
-.menu__descr{
+.leftside_container{
+    flex: 1 1 50%;
+    background-color: rgb(49, 58, 85);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.rightside_container{
+    flex: 1 1 50%;
+    background-color: rgb(49, 58, 85);
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.menu__drink {
-    display: flex;
-    color: #fff;
-    position: relative;
-}
-
-.menu__header{
-    font-size: 20px;
-    font-weight: 700;
+p{
+    font-family: 'Roboto', sans-serif;
+    
+    font-size: 18px;
     line-height: 140%;
-
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #facb8c;
+    max-width: 80%;
 }
 
-
-.arrow{
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    top: 100px;
-    left: 50px;
-}
-
-.arrow2{
-    position:absolute;
-    transform: rotate(90deg);
-    width: 150px;
-    height: 150px;
-    left: 500px;
-}
-
-.menu__subheader{
-    font-size: 16px;
-    font-weight: 500;
+.menu_dish__header{
+    font-size: 40px;
     
 }
 
-.syrninki{
-    padding: 150px 0 0 150px;
+.menu_dish__decription{
+    opacity: .7;
+}
+
+.price{
+    width: 80%;
+    font-size: 40px;
+}
+
+.arrow{
+    position: absolute;
+    
+    
+}
+.a1{
+    left: 10%;
+    top: 20%;
+    height: 150px;
 }
 
 .a2{
-    left: 550px;
-    transform: rotate(30deg);
+    transform: rotate(90deg);
+    
+    height: 140px;
+    transform: scale(-1, -1);
+    top: 70%;
+    left: 30%;
 }
 
-.dish__desription{
-    font-family: 'Caveat', sans-serif;
+.img_dish__decription{
     position: absolute;
-    font-size: 16px;
-    font-weight: 300;
+    color: #fff;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-style: italic;
+    top: 18%;
+    left: 16%;
 }
-
-.d1{
-    left: 180px;
-    top: 90px;
-}
-
-
-
