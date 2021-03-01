@@ -1,27 +1,21 @@
 import formValidate from './formValidate.js';
-
- export default function form(){
-     const form = document.getElementById('form');
+import {postData} from '../modules/services.js';
+export default function forms(formsSelector) {
+    const forms = document.querySelectorAll(formsSelector);
     const message = {
-        loading: 'Загрузка...',
+        loading: 'img/form/spinner.svg',
         success: 'Спасибо! Скоро мы с вами свяжемся',
         failure: 'Что-то пошло не так...'
     };
 
-    const postData = async (url, data) => {
-        let res = await fetch(url, {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: data
-        });
+    forms.forEach(item => {
+        bindPostData(item);
+    });
 
-        return await res.json();
-    }
     function bindPostData(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+
             formValidate();
             let statusMessage = document.createElement('img');
             statusMessage.src = message.loading;
@@ -35,19 +29,17 @@ import formValidate from './formValidate.js';
 
             const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-            postData('http://localhost:81/requests', json)
+            postData('http://localhost:3000/requests', json)
             .then(data => {
                 console.log(data);
-                console.log(message.success);
+                alert(message.success);
                 statusMessage.remove();
             }).catch(() => {
-                console.log(message.failure);
+                alert(message.failure);
             }).finally(() => {
                 form.reset();
             });
         });
     }
 
-
-    
- }   
+}

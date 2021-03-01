@@ -2,7 +2,7 @@ import videoPausePlay  from './modules/videoLaunch.js';
 import {closeForm, openForm} from './modules/closeOpenForm.js';
 
 
-import form from './modules/postData.js';
+import forms from './modules/postData.js';
 
 window.addEventListener("DOMContentLoaded", () => {
   
@@ -13,6 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   videoPausePlay();
   openForm();
-  form();
+  forms('form');
   closeForm();
 });
