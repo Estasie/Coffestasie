@@ -1,0 +1,13 @@
+{
+    "applicants": [
+      {
+        "id": 1,
+        "name": "Ana",
+        "email": "examplemail@mail.ru",
+        "tel": "89459834589",
+        "agreement": "on"
+      }
+
+    ]
+
+}
